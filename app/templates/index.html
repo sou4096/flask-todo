@@ -9,21 +9,25 @@
 <body>
     <h1>Flask Todo</h1>
 
-    <form>
-        <input type="text" required>
+    <form action="/add" method="POST">
+        <input type="text" name="task" required>
         <button type="submit">add</button>
     </form>
 
     <div class="todoList">
         <ul>
+            {% for task in todos %}
             <li>
                 <div class="check_task">
                     <input type ="checkbox"/>
-                    <div class="task_name">task1</div>
+                    <div class="task_name">
+                        {{ task }}
+                    </div>
                 </div>
 
-                <a>delate</a>
+                <a href="/delete/{{ loop.index0 }}">delate</a>
             </li>
+            {% endfor %}
         </ul>
     </div>
 </body>
