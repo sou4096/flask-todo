@@ -80,7 +80,7 @@ input[type="checkbox"]:checked ~ .task_name {
     color: #817d7d;
 }
 
-.delBtn {
+a {
     display: flexbox;
     padding: 5px 10px;
     font-size: medium;
